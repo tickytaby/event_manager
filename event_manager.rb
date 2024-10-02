@@ -64,6 +64,6 @@ contents.each do |row|
   phone = clean_homephone(row[:homephone])
   regtime = row[:regdate]
   puts "#{name} registered on #{regtime.split(' ')[0]} at #{regtime.split(' ')[1]}"
-  # form_letter = erb_template.result(binding)
-  # save_thank_you_letter(id, form_letter)
+  form_letter = erb_template.result(binding)
+  save_thank_you_letter(id, form_letter)
 end
