@@ -62,6 +62,8 @@ contents.each do |row|
   zipcode = clean_zipcode(row[:zipcode])
   legislators = legislator_by_zipcode(zipcode)
   phone = clean_homephone(row[:homephone])
-  form_letter = erb_template.result(binding)
-  save_thank_you_letter(id, form_letter)
+  regtime = row[:regdate]
+  puts "#{name} registered on #{regtime.split(' ')[0]} at #{regtime.split(' ')[1]}"
+  # form_letter = erb_template.result(binding)
+  # save_thank_you_letter(id, form_letter)
 end
